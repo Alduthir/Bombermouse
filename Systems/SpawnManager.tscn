@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cmdcyx40yl2qj"]
+
+[ext_resource type="Script" uid="uid://be4c2y4wtws6f" path="res://Systems/spawn_manager.gd" id="1_sqd36"]
+[ext_resource type="PackedScene" uid="uid://dikux00w0mrlk" path="res://Bomb/bomb.tscn" id="2_dax1h"]
+[ext_resource type="PackedScene" uid="uid://4vv6hm060uiq" path="res://Bomb/Explosion.tscn" id="3_ca4f2"]
+
+[node name="SpawnManager" type="Node" unique_id=1509446640]
+script = ExtResource("1_sqd36")
+_bomb_scene = ExtResource("2_dax1h")
+_explosion_scene = ExtResource("3_ca4f2")

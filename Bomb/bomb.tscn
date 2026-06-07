@@ -1,39 +1,63 @@
 [gd_scene format=3 uid="uid://dikux00w0mrlk"]
 
-[ext_resource type="Texture2D" uid="uid://ykojup7keww6" path="res://Bomb/icon.svg" id="1_bq273"]
 [ext_resource type="Script" uid="uid://c4a5r2bs1b847" path="res://Bomb/bomb.gd" id="1_u8wor"]
+[ext_resource type="Texture2D" uid="uid://dl6yohxhy1l4u" path="res://Bomb/bomb.png" id="2_u8wor"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8wor"]
-atlas = ExtResource("1_bq273")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlc2p"]
+atlas = ExtResource("2_u8wor")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga526"]
+atlas = ExtResource("2_u8wor")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bl3wg"]
+atlas = ExtResource("2_u8wor")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fywk"]
+atlas = ExtResource("2_u8wor")
+region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jlc2p"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u8wor")
+"texture": SubResource("AtlasTexture_jlc2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga526")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bl3wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fywk")
 }],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"loop": false,
+"name": &"Bomb",
+"speed": 1.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ga526"]
 size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jlc2p"]
-radius = 8.0
+radius = 7.0
 
 [node name="Bomb" type="AnimatableBody2D" unique_id=1598046279]
-z_index = 18
-z_as_relative = false
+z_index = 1
+y_sort_enabled = true
 collision_layer = 0
 collision_mask = 7
 script = ExtResource("1_u8wor")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1896383286]
-scale = Vector2(0.125, 0.125)
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_jlc2p")
+animation = &"Bomb"
+frame = 3
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=594096733]
 shape = SubResource("RectangleShape2D_ga526")

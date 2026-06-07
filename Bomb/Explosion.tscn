@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4vv6hm060uiq"]
+
+[ext_resource type="Script" uid="uid://cvvx45hx0egqg" path="res://Bomb/explosion.gd" id="1_my0nf"]
+[ext_resource type="SpriteFrames" uid="uid://dbuohqwge4rir" path="res://Bomb/explosion_animation.tres" id="2_my0nf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my0nf"]
+size = Vector2(16, 16)
+
+[node name="Explosion" type="StaticBody2D" unique_id=1751118969 groups=["explosion"]]
+z_index = 1
+y_sort_enabled = true
+collision_layer = 8
+collision_mask = 55
+script = ExtResource("1_my0nf")
+
+[node name="Center" type="AnimatedSprite2D" parent="." unique_id=93625466]
+unique_name_in_owner = true
+texture_filter = 1
+sprite_frames = ExtResource("2_my0nf")
+animation = &"center"
+
+[node name="Collider" type="CollisionShape2D" parent="." unique_id=926335293 groups=["explosion"]]
+shape = SubResource("RectangleShape2D_my0nf")

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bjl1op5t41yc5"]
+
+[ext_resource type="Texture2D" uid="uid://cbj0gai86npbu" path="res://Obstacle/Stump.png" id="1_jejca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jejca"]
+size = Vector2(16, 16)
+
+[node name="Terrain" type="StaticBody2D" unique_id=142148166]
+collision_layer = 2
+collision_mask = 13
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1329186338]
+texture_filter = 1
+texture = ExtResource("1_jejca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1480662588]
+shape = SubResource("RectangleShape2D_jejca")
