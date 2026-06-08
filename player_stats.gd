@@ -6,7 +6,7 @@ var default_movement_speed : float = 100.0
 
 var movement_speed := default_movement_speed
 var lives := default_lives
-var bomb_amount := 1
+var bomb_amount := 2
 var can_kick : bool = false
 
 func decrease_life()-> void:

@@ -1,3 +1,3 @@
 extends Node
 
-var blast_radius : int = 2
+var blast_radius : int = 3

@@ -23,6 +23,7 @@ func propagate_in_direction(direction: Vector2)->void:
 		terrain_cast.position = Vector2.ZERO
 		terrain_cast.target_position = 8*direction
 		terrain_cast.set_collision_mask_value(2, true)
+		terrain_cast.set_collision_mask_value(1, true)
 		add_child(terrain_cast)
 		terrain_cast.force_raycast_update()
 
@@ -32,6 +33,7 @@ func propagate_in_direction(direction: Vector2)->void:
 		obstacle_cast.position = Vector2.ZERO
 		obstacle_cast.target_position = direction
 		obstacle_cast.set_collision_mask_value(6, true)
+		obstacle_cast.set_collision_mask_value(1, false)
 		add_child(obstacle_cast)
 		obstacle_cast.force_raycast_update()
 		
@@ -44,6 +46,9 @@ func propagate_in_direction(direction: Vector2)->void:
 			elif depth > 0 and depth < BombStats.blast_radius:
 				if obstacle_cast.is_colliding():
 					blast_collided = true
+					var collider : Object = obstacle_cast.get_collider()
+					if collider is Obstacle:
+						collider.explode()
 				create_explosion_segment(direction, terrain_cast, obstacle_cast.is_colliding())
 			elif depth == BombStats.blast_radius:
 				create_explosion_segment(direction, terrain_cast, true)
@@ -58,6 +63,7 @@ func create_explosion_segment(direction : Vector2, terrain_cast: RayCast2D, is_e
 	var explosion_segment := StaticBody2D.new()
 	explosion_segment.add_to_group("explosion")
 	explosion_segment.position = terrain_cast.position
+	explosion_segment.set_collision_layer_value(1, false)
 	explosion_segment.set_collision_layer_value(4, true)
 	explosion_segment.set_collision_mask_value(1, true)
 	explosion_segment.set_collision_mask_value(3, true)

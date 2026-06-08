@@ -6,12 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw37"]
 size = Vector2(16, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_enm7a"]
-size = Vector2(14, 14)
-
 [node name="Obstacle" type="StaticBody2D" unique_id=1362379723]
 collision_layer = 32
-collision_mask = 5
+collision_mask = 13
 script = ExtResource("1_5iw37")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=394663003]
@@ -19,16 +16,3 @@ shape = SubResource("RectangleShape2D_5iw37")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=933654947]
 texture = ExtResource("1_enm7a")
-
-[node name="ExplosionDetection" type="Area2D" parent="." unique_id=977150117]
-collision_layer = 32
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExplosionDetection" unique_id=715703853]
-shape = SubResource("RectangleShape2D_enm7a")
-debug_color = Color(0.9303334, 0.18642312, 0.4773844, 0.41960785)
-
-[connection signal="area_entered" from="ExplosionDetection" to="." method="_on_explosion_detection_area_entered"]
-[connection signal="area_shape_entered" from="ExplosionDetection" to="." method="_on_explosion_detection_area_shape_entered"]
-[connection signal="body_entered" from="ExplosionDetection" to="." method="_on_explosion_detection_body_entered"]
-[connection signal="body_shape_entered" from="ExplosionDetection" to="." method="_on_explosion_detection_body_shape_entered"]

@@ -1,5 +1,5 @@
-extends StaticBody2D
+class_name Obstacle extends StaticBody2D
 
-func _on_explosion_detection_body_entered(body: Node2D) -> void:
+func explode()->void:
 	print_debug("Explosion in area")
 	queue_free()

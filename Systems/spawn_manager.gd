@@ -11,7 +11,7 @@ func _ready() -> void:
 	SignalBus.spawn_explosion.connect(_on_bomb_spawn_explosion)
 
 func _on_player_spawn_bomb(player_position: Vector2) -> void:
-	if placed_bombs.size() > PlayerStats.bomb_amount:
+	if placed_bombs.size() >= PlayerStats.bomb_amount:
 		return
 	var cell_coordinate := _terrain.local_to_map(player_position)
 	var cell_contents := _terrain.get_cell_source_id(cell_coordinate)
