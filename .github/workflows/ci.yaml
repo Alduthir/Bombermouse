@@ -1,0 +1,43 @@
+name: "BomberMouse CI"
+on:
+  push:
+    branches:
+    - main
+
+env:
+  GODOT_VERSION: 4.6.3
+  USER_VERSION: "0.0.${{ github.run_number }}"
+
+jobs:
+  build-desktop-clients:
+    name: Export Game Binaries
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [windows, linux, html]
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout
+      
+      - uses: chickensoft-games/setup-godot@v2
+        name: Setup Godot
+        with:
+          version: ${{ env.GODOT_VERSION }}
+          use-dotnet: false
+          include-templates: true
+
+      - name: Prepare dist 
+        run: mkdir -p dist/${{ matrix.target }}
+
+      - name: Export release
+        run: godot --headless --export-release ${{ matrix.target }}
+
+      - uses: manleydev/butler-publish-itchio-action@master
+        env:
+          BUTLER_CREDENTIALS: ${{ secrets.BUTLER_API_KEY }}
+          CHANNEL: ${{ matrix.target }}
+          ITCH_GAME: ${{ secrets.ITCHIO_GAME }}
+          ITCH_USER: ${{ secrets.ITCHIO_USERNAME }}
+          PACKAGE: dist/${{ matrix.target }}
+          VERSION: ${{ env.USER_VERSION }}
