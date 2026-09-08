@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://d3qfvwme5iexe"]
+
+[ext_resource type="Script" uid="uid://dtmnc8f2y0wrq" path="res://UI/main_menu.gd" id="1_uahxu"]
+
+[sub_resource type="Theme" id="Theme_uahxu"]
+
+[node name="MainMenu" type="Control" unique_id=938984593]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_uahxu")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1053405877]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1129489050]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=1765279664]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_position = Vector2(0, -5)
+offset_transform_scale = Vector2(1.2, 1.2)
+offset_transform_rotation = 0.05235988
+theme = SubResource("Theme_uahxu")
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="VBoxContainer" unique_id=275837122]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_position = Vector2(0, -5)
+offset_transform_scale = Vector2(1.2, 1.2)
+offset_transform_rotation = -0.05235988
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=791897551]
+unique_name_in_owner = true
+layout_mode = 2
+offset_transform_position = Vector2(0, -5)
+offset_transform_scale = Vector2(1.2, 1.2)
+offset_transform_rotation = 0.05235988
+text = "Quit"
+
+[connection signal="focus_entered" from="VBoxContainer/PlayButton" to="." method="_on_play_button_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/PlayButton" to="." method="_on_play_button_focus_exited"]
+[connection signal="focus_entered" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/SettingsButton" to="." method="_on_settings_button_focus_exited"]
+[connection signal="focus_entered" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_focus_entered"]
+[connection signal="focus_exited" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_focus_exited"]

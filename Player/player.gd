@@ -31,7 +31,6 @@ func _physics_process(_delta: float) -> void:
 	if signed_direction.length() > 0:
 		_animationPlayer.flip_h = direction.x < 0.0
 
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("explosion"):
 		set_physics_process(false)

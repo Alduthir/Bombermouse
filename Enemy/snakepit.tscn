@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://of80m5tvsa3m"]
+
+[ext_resource type="Texture2D" uid="uid://cqt2jchajjsni" path="res://Obstacle/tree.png" id="1_28p3d"]
+[ext_resource type="Script" uid="uid://buqtraatykbas" path="res://Enemy/snakepit.gd" id="1_nch0n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p26h1"]
+size = Vector2(16, 15)
+
+[node name="Snakepit" type="StaticBody2D" unique_id=156259981]
+modulate = Color(1, 0.31, 0.31, 1)
+collision_layer = 32
+collision_mask = 9
+script = ExtResource("1_nch0n")
+
+[node name="Timer" type="Timer" parent="." unique_id=1408352889]
+wait_time = 60.0
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1505204818]
+texture = ExtResource("1_28p3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=431723686]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_p26h1")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=327151607]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

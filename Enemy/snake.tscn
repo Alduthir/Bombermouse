@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cw7jf3he14wxq"]
+
+[ext_resource type="Script" uid="uid://l3vjhfjfc8s7" path="res://Enemy/snake.gd" id="1_2hng0"]
+[ext_resource type="Texture2D" uid="uid://btss7x8kwpqxu" path="res://Player/mouse_16x16_animated.png" id="1_2pb1h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px1sc"]
+atlas = ExtResource("1_2pb1h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p26h1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_px1sc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uf2f8"]
+size = Vector2(16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p26h1"]
+radius = 102.01961
+
+[node name="Enemy" type="CharacterBody2D" unique_id=335788522]
+collision_layer = 4
+collision_mask = 43
+script = ExtResource("1_2hng0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=44887726]
+modulate = Color(1, 0.01999998, 0.01999998, 1)
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_p26h1")
+offset = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1682326896]
+shape = SubResource("RectangleShape2D_uf2f8")
+
+[node name="FollowRange" type="Area2D" parent="." unique_id=171838353]
+
+[node name="FollowRangeShape" type="CollisionShape2D" parent="FollowRange" unique_id=2085684979]
+shape = SubResource("CircleShape2D_p26h1")
+
+[connection signal="body_entered" from="FollowRange" to="." method="_on_follow_range_body_entered"]
+[connection signal="body_exited" from="FollowRange" to="." method="_on_follow_range_body_exited"]

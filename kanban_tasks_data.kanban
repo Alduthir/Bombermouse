@@ -1,0 +1,395 @@
+{
+	"categories": [
+		{
+			"uuid": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"title": "Must",
+			"color": "ff5656"
+		},
+		{
+			"uuid": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"title": "Should",
+			"color": "ff8c00"
+		},
+		{
+			"uuid": "f8a30e80-0bd2-402c-93ee-1811f0bc1280",
+			"title": "Could",
+			"color": "f4ff03"
+		},
+		{
+			"uuid": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"title": "Art",
+			"color": "149bd3"
+		}
+	],
+	"stages": [
+		{
+			"uuid": "46eb5795-7aef-4d8c-83d5-201ebfc23ed0",
+			"title": "Ideas",
+			"tasks": [
+				"589b7a13-0157-4f30-81b3-417aed58acc9",
+				"292f5bd4-e961-4e2f-aa30-cb774e1fa727",
+				"f5c74cae-ed88-4a44-b269-a143f6e13b46",
+				"a300c2bf-32be-4134-a064-f670e41db667",
+				"8cc9e69d-bc0a-49c8-8b1d-853a300f309c",
+				"b8568123-45dc-41df-8a69-875feaf518c5",
+				"5ff9cbd5-a960-4ceb-a803-b813cdd1bd82"
+			]
+		},
+		{
+			"uuid": "35548b2f-519c-4daa-bc57-936e54cbd108",
+			"title": "Todo",
+			"tasks": [
+				"bb4927ab-3ca6-4dca-ae94-adde1cfc4550",
+				"cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
+				"14f58f6a-1f82-4f15-8505-164d1755aead",
+				"fa1c8b8a-b11e-4556-94d1-33f730f670f5",
+				"a0d73fe3-4792-4f33-83f4-47159b59b77d",
+				"5c9d3b2e-54f3-4853-b30b-96300cde5b0e",
+				"d6f75383-5720-4a5c-89ff-8a84ad3045e4",
+				"90e54cbd-2a69-486f-95ca-348d8521be52",
+				"fa23d5ae-70a9-4778-92f4-3726c46c91d1",
+				"9191fa06-5f5c-46ea-817c-33d59268f940",
+				"7a4946da-3c7b-4140-b9e9-5618e0f9edce",
+				"740e0264-d2eb-4b17-a5f1-af3502b86ce7",
+				"97922032-3aed-4a02-bd05-087baae82d77"
+			]
+		},
+		{
+			"uuid": "996c4282-ffc3-48bb-b2bb-5fb35a766687",
+			"title": "Doing",
+			"tasks": [
+				"b2179ea1-aba7-40f3-a14f-0a5d78428f32",
+				"8b9d7e72-213b-4e30-bc7f-71382759a267"
+			]
+		},
+		{
+			"uuid": "f1bc0f5e-f10e-4d9b-b47e-86d089111b50",
+			"title": "Done",
+			"tasks": [
+				"cd8a8c8d-7134-4dc1-8193-3c01bec79775",
+				"a0f968bf-e34a-4177-a29d-5b4078e8786d",
+				"748e665a-c381-48db-93f8-10f6b84b939c",
+				"f662b6ca-df64-41ab-8040-854abc141e1d",
+				"51a15ef3-cc6e-4791-a47e-fe25b3fc3409",
+				"11813b14-0e3a-4e06-9504-2e0d69f98da5",
+				"2951a999-2754-4919-93c8-304f2794a77f",
+				"ee4739bd-05ad-4af3-b3e4-1da50bca5212"
+			]
+		}
+	],
+	"tasks": [
+		{
+			"uuid": "2951a999-2754-4919-93c8-304f2794a77f",
+			"title": "Enemies spawn from snake pits",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": [
+				{
+					"details": "Snake enemy Scene",
+					"done": true
+				},
+				{
+					"details": "Snakepit scene",
+					"done": true
+				},
+				{
+					"details": "Enemies spawn on timeout",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "8b9d7e72-213b-4e30-bc7f-71382759a267",
+			"title": "Snakes chase the player",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "bb4927ab-3ca6-4dca-ae94-adde1cfc4550",
+			"title": "Bombs can destroy snake pits",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
+			"title": "Destroying all snake pits clears the level",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "589b7a13-0157-4f30-81b3-417aed58acc9",
+			"title": "Procedurally generated levels",
+			"description": "",
+			"category": "f8a30e80-0bd2-402c-93ee-1811f0bc1280",
+			"steps": []
+		},
+		{
+			"uuid": "7a4946da-3c7b-4140-b9e9-5618e0f9edce",
+			"title": "Powerups drop from enemies",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "9191fa06-5f5c-46ea-817c-33d59268f940",
+			"title": "Player can pick up powerups",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "292f5bd4-e961-4e2f-aa30-cb774e1fa727",
+			"title": "Multiple enemies (spitting lizards, flying owls?)",
+			"description": "",
+			"category": "f8a30e80-0bd2-402c-93ee-1811f0bc1280",
+			"steps": []
+		},
+		{
+			"uuid": "f5c74cae-ed88-4a44-b269-a143f6e13b46",
+			"title": "Alternate Tileset (Desert)",
+			"description": "",
+			"category": "f8a30e80-0bd2-402c-93ee-1811f0bc1280",
+			"steps": []
+		},
+		{
+			"uuid": "a300c2bf-32be-4134-a064-f670e41db667",
+			"title": "Leaderboard",
+			"description": "",
+			"category": "f8a30e80-0bd2-402c-93ee-1811f0bc1280",
+			"steps": []
+		},
+		{
+			"uuid": "90e54cbd-2a69-486f-95ca-348d8521be52",
+			"title": "Score",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "cd8a8c8d-7134-4dc1-8193-3c01bec79775",
+			"title": "Player can move in 4 directions",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "a0f968bf-e34a-4177-a29d-5b4078e8786d",
+			"title": "Player collides with objects",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "14f58f6a-1f82-4f15-8505-164d1755aead",
+			"title": "Collision with enemies hurts player",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "748e665a-c381-48db-93f8-10f6b84b939c",
+			"title": "Player can place bombs",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "f662b6ca-df64-41ab-8040-854abc141e1d",
+			"title": "Bombs explode after a set time",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "51a15ef3-cc6e-4791-a47e-fe25b3fc3409",
+			"title": "Explosions propagate based on range",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "11813b14-0e3a-4e06-9504-2e0d69f98da5",
+			"title": "Explosions destroy destructible objects",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "fa1c8b8a-b11e-4556-94d1-33f730f670f5",
+			"title": "Explosions hurt enemies",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "b2179ea1-aba7-40f3-a14f-0a5d78428f32",
+			"title": "Snake assets",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": [
+				{
+					"details": "4 direction movement animation",
+					"done": false
+				},
+				{
+					"details": "death animation",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "5c9d3b2e-54f3-4853-b30b-96300cde5b0e",
+			"title": "Snakepits",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": []
+		},
+		{
+			"uuid": "b8568123-45dc-41df-8a69-875feaf518c5",
+			"title": "Owls",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": [
+				{
+					"details": "Flying animation",
+					"done": false
+				},
+				{
+					"details": "Death animation",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "8cc9e69d-bc0a-49c8-8b1d-853a300f309c",
+			"title": "Desert tileset",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": []
+		},
+		{
+			"uuid": "5ff9cbd5-a960-4ceb-a803-b813cdd1bd82",
+			"title": "Lizards",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": [
+				{
+					"details": "Walking animation",
+					"done": false
+				},
+				{
+					"details": "Spitting animation",
+					"done": false
+				},
+				{
+					"details": "Death animation",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "d6f75383-5720-4a5c-89ff-8a84ad3045e4",
+			"title": "Killing enemies and destroying snakepits gives points",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "fa23d5ae-70a9-4778-92f4-3726c46c91d1",
+			"title": "Powerups",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": [
+				{
+					"details": "bomb power",
+					"done": false
+				},
+				{
+					"details": "bomb amount",
+					"done": false
+				},
+				{
+					"details": "movement speed",
+					"done": false
+				},
+				{
+					"details": "kicking",
+					"done": false
+				},
+				{
+					"details": "lives",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "a0d73fe3-4792-4f33-83f4-47159b59b77d",
+			"title": "UI Theming",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "ee4739bd-05ad-4af3-b3e4-1da50bca5212",
+			"title": "Mouse",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": [
+				{
+					"details": "Walking animation",
+					"done": true
+				},
+				{
+					"details": "Death animation",
+					"done": true
+				},
+				{
+					"details": "idle animation",
+					"done": true
+				}
+			]
+		},
+		{
+			"uuid": "740e0264-d2eb-4b17-a5f1-af3502b86ce7",
+			"title": "Health UI",
+			"description": "",
+			"category": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
+			"steps": [
+				{
+					"details": "Heart Sprite Pixelart",
+					"done": false
+				},
+				{
+					"details": "Shader for losing or gaining hearts",
+					"done": false
+				}
+			]
+		},
+		{
+			"uuid": "97922032-3aed-4a02-bd05-087baae82d77",
+			"title": "Snakepits max snakes alive",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		}
+	],
+	"layout": {
+		"columns": [
+			[
+				"46eb5795-7aef-4d8c-83d5-201ebfc23ed0"
+			],
+			[
+				"35548b2f-519c-4daa-bc57-936e54cbd108"
+			],
+			[
+				"996c4282-ffc3-48bb-b2bb-5fb35a766687"
+			],
+			[
+				"f1bc0f5e-f10e-4d9b-b47e-86d089111b50"
+			]
+		]
+	}
+}
