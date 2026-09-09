@@ -51,7 +51,10 @@
 				"9191fa06-5f5c-46ea-817c-33d59268f940",
 				"7a4946da-3c7b-4140-b9e9-5618e0f9edce",
 				"740e0264-d2eb-4b17-a5f1-af3502b86ce7",
-				"97922032-3aed-4a02-bd05-087baae82d77"
+				"97922032-3aed-4a02-bd05-087baae82d77",
+				"c9f7852b-d244-4233-933a-adf3e51ef74b",
+				"d476d13e-5c8f-4079-92f4-c2a86706e4a5",
+				"e71e3e3e-24c9-4adf-916c-4411bf8eac32"
 			]
 		},
 		{
@@ -373,6 +376,27 @@
 			"title": "Snakepits max snakes alive",
 			"description": "",
 			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "c9f7852b-d244-4233-933a-adf3e51ef74b",
+			"title": "Pause screen",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "d476d13e-5c8f-4079-92f4-c2a86706e4a5",
+			"title": "Menu UI",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "e71e3e3e-24c9-4adf-916c-4411bf8eac32",
+			"title": "Audio",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
 			"steps": []
 		}
 	],

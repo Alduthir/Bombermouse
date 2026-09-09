@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://of80m5tvsa3m" path="res://Enemy/snakepit.tscn" id="6_kv5fy"]
 [ext_resource type="PackedScene" uid="uid://cmdcyx40yl2qj" path="res://Systems/SpawnManager.tscn" id="6_kxr0u"]
 [ext_resource type="PackedScene" uid="uid://5chmgcx3345i" path="res://Obstacle/Obstacle.tscn" id="6_voj1p"]
+[ext_resource type="PackedScene" uid="uid://cw7jf3he14wxq" path="res://Enemy/snake.tscn" id="7_kxr0u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyvk6"]
 texture = ExtResource("1_iqcmb")
@@ -81,7 +82,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAPAAAAAAD//wAAAAALAAAAAAD+/wEAAAAPAAA
 tile_set = SubResource("TileSet_2yvdw")
 
 [node name="Player" parent="." unique_id=2081047818 instance=ExtResource("2_y1yrn")]
-position = Vector2(3, 0)
+position = Vector2(-8, 8)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1610564348]
 position = Vector2(-3, 0)
@@ -124,3 +125,6 @@ position = Vector2(8, -40)
 
 [node name="Snakepit" parent="." unique_id=156259981 instance=ExtResource("6_kv5fy")]
 position = Vector2(-72, 56)
+
+[node name="Enemy" parent="." unique_id=335788522 instance=ExtResource("7_kxr0u")]
+position = Vector2(8, 88)

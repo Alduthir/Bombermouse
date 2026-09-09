@@ -13,7 +13,7 @@ config_version=5
 config/name="BomberMouse"
 run/main_scene="uid://chiibhsnwqtxv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://Bomb/icon.svg"
+config/icon="uid://dl6yohxhy1l4u"
 
 [autoload]
 
