@@ -13,7 +13,7 @@ config_version=5
 config/name="BomberMouse"
 run/main_scene="uid://chiibhsnwqtxv"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="uid://dl6yohxhy1l4u"
+config/icon="uid://dk14wmdcpykb7"
 
 [autoload]
 
@@ -74,7 +74,7 @@ place_bomb={
 2d_physics/layer_3="Enemy"
 2d_physics/layer_4="Explosion"
 2d_physics/layer_5="Interactible"
-2d_physics/layer_6="Obstacle"
+2d_physics/layer_6="Destructible"
 
 [physics]
 

@@ -45,6 +45,7 @@
 				"fa1c8b8a-b11e-4556-94d1-33f730f670f5",
 				"a0d73fe3-4792-4f33-83f4-47159b59b77d",
 				"5c9d3b2e-54f3-4853-b30b-96300cde5b0e",
+				"8b9d7e72-213b-4e30-bc7f-71382759a267",
 				"d6f75383-5720-4a5c-89ff-8a84ad3045e4",
 				"90e54cbd-2a69-486f-95ca-348d8521be52",
 				"fa23d5ae-70a9-4778-92f4-3726c46c91d1",
@@ -62,7 +63,7 @@
 			"title": "Doing",
 			"tasks": [
 				"b2179ea1-aba7-40f3-a14f-0a5d78428f32",
-				"8b9d7e72-213b-4e30-bc7f-71382759a267"
+				"f0659bab-b838-48d7-9867-1bc49881cf02"
 			]
 		},
 		{
@@ -76,7 +77,8 @@
 				"51a15ef3-cc6e-4791-a47e-fe25b3fc3409",
 				"11813b14-0e3a-4e06-9504-2e0d69f98da5",
 				"2951a999-2754-4919-93c8-304f2794a77f",
-				"ee4739bd-05ad-4af3-b3e4-1da50bca5212"
+				"ee4739bd-05ad-4af3-b3e4-1da50bca5212",
+				"5431dbe4-58a8-45d7-997e-85d72293cee0"
 			]
 		}
 	],
@@ -240,6 +242,10 @@
 				{
 					"details": "death animation",
 					"done": false
+				},
+				{
+					"details": "base design",
+					"done": true
 				}
 			]
 		},
@@ -263,6 +269,10 @@
 				{
 					"details": "Death animation",
 					"done": false
+				},
+				{
+					"details": "base design",
+					"done": true
 				}
 			]
 		},
@@ -398,6 +408,33 @@
 			"description": "",
 			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
 			"steps": []
+		},
+		{
+			"uuid": "5431dbe4-58a8-45d7-997e-85d72293cee0",
+			"title": "Refactor Terrain to be part of the tileset",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "f0659bab-b838-48d7-9867-1bc49881cf02",
+			"title": "Actually utilize the Tile system for explosions and movement",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": [
+				{
+					"details": "Use Tiles for movement",
+					"done": false
+				},
+				{
+					"details": "Use Tiles for Destructibles",
+					"done": true
+				},
+				{
+					"details": "Remove Destructibles from Tilemap on explosion",
+					"done": false
+				}
+			]
 		}
 	],
 	"layout": {

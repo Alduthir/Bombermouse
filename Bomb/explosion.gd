@@ -3,6 +3,7 @@ class_name Explosion extends Node2D
 @onready var center_animation_plater : AnimatedSprite2D = %Center
 var explosion_spriteframes := preload("res://Bomb/explosion_animation.tres")
 var sections := []
+var obstacles_to_destroy := []
 func _ready() -> void:
 	var directions := [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 	
@@ -13,7 +14,7 @@ func _ready() -> void:
 	for section : Node2D in sections:
 		var animation_player : AnimatedSprite2D = section.get_child(0)
 		animation_player.play()
-		animation_player.animation_finished.connect(queue_free)
+		animation_player.animation_finished.connect(finalize_explosion)
 	
 func propagate_in_direction(direction: Vector2)->void:
 		var depth := 0
@@ -46,9 +47,7 @@ func propagate_in_direction(direction: Vector2)->void:
 			elif depth > 0 and depth < BombStats.blast_radius:
 				if obstacle_cast.is_colliding():
 					blast_collided = true
-					var collider : Object = obstacle_cast.get_collider()
-					if collider is Obstacle:
-						collider.explode()
+					obstacles_to_destroy.append(obstacle_cast.position)
 				create_explosion_segment(direction, terrain_cast, obstacle_cast.is_colliding())
 			elif depth == BombStats.blast_radius:
 				create_explosion_segment(direction, terrain_cast, true)
@@ -94,3 +93,8 @@ func create_explosion_segment(direction : Vector2, terrain_cast: RayCast2D, is_e
 
 	add_child(explosion_segment)
 	sections.append(explosion_segment)
+
+func finalize_explosion()->void:
+	for exploded_position in obstacles_to_destroy:
+		SignalBus.remove_destructible.emit(exploded_position)
+	queue_free()

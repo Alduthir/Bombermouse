@@ -1,17 +1,17 @@
 [gd_scene format=3 uid="uid://cw7jf3he14wxq"]
 
 [ext_resource type="Script" uid="uid://l3vjhfjfc8s7" path="res://Enemy/snake.gd" id="1_2hng0"]
-[ext_resource type="Texture2D" uid="uid://btss7x8kwpqxu" path="res://Player/mouse_16x16_animated.png" id="1_2pb1h"]
+[ext_resource type="Texture2D" uid="uid://qgyvfe5arbll" path="res://Enemy/Snake/Snake.png" id="2_2hng0"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_px1sc"]
-atlas = ExtResource("1_2pb1h")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd5lo"]
+atlas = ExtResource("2_2hng0")
+region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_p26h1"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr1j4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_px1sc")
+"texture": SubResource("AtlasTexture_fd5lo")
 }],
 "loop": 1,
 "name": &"default",
@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf2f8"]
-size = Vector2(16, 16)
+size = Vector2(16, 15)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=335788522]
 y_sort_enabled = true
@@ -28,12 +28,12 @@ collision_mask = 35
 script = ExtResource("1_2hng0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=44887726]
-modulate = Color(1, 0.01999998, 0.01999998, 1)
 position = Vector2(0, 8)
-sprite_frames = SubResource("SpriteFrames_p26h1")
+sprite_frames = SubResource("SpriteFrames_nr1j4")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1682326896]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uf2f8")
 
 [node name="Raycasts" type="Node2D" parent="." unique_id=1963627815]
