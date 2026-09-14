@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://5chmgcx3345i"]
 
-[ext_resource type="Script" uid="uid://c0hu7p4q8elkb" path="res://Obstacle/obstacle.gd" id="1_5iw37"]
 [ext_resource type="Texture2D" uid="uid://cqt2jchajjsni" path="res://Obstacle/tree.png" id="1_enm7a"]
+
+[sub_resource type="GDScript" id="GDScript_enm7a"]
+script/source = "class_name Obstacle extends StaticBody2D
+
+func explode()->void:
+	print_debug(\"Explosion in area\")
+	queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5iw37"]
 size = Vector2(16, 16)
@@ -9,7 +16,7 @@ size = Vector2(16, 16)
 [node name="Obstacle" type="StaticBody2D" unique_id=1362379723]
 collision_layer = 32
 collision_mask = 13
-script = ExtResource("1_5iw37")
+script = SubResource("GDScript_enm7a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=394663003]
 shape = SubResource("RectangleShape2D_5iw37")

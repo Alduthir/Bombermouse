@@ -47,7 +47,7 @@ func propagate_in_direction(direction: Vector2)->void:
 			elif depth > 0 and depth < BombStats.blast_radius:
 				if obstacle_cast.is_colliding():
 					blast_collided = true
-					obstacles_to_destroy.append(obstacle_cast.position)
+					obstacles_to_destroy.append(obstacle_cast.global_position)
 				create_explosion_segment(direction, terrain_cast, obstacle_cast.is_colliding())
 			elif depth == BombStats.blast_radius:
 				create_explosion_segment(direction, terrain_cast, true)

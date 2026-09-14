@@ -39,31 +39,31 @@
 			"uuid": "35548b2f-519c-4daa-bc57-936e54cbd108",
 			"title": "Todo",
 			"tasks": [
+				"fa1c8b8a-b11e-4556-94d1-33f730f670f5",
+				"14f58f6a-1f82-4f15-8505-164d1755aead",
+				"b2179ea1-aba7-40f3-a14f-0a5d78428f32",
 				"bb4927ab-3ca6-4dca-ae94-adde1cfc4550",
 				"cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
-				"14f58f6a-1f82-4f15-8505-164d1755aead",
-				"fa1c8b8a-b11e-4556-94d1-33f730f670f5",
-				"a0d73fe3-4792-4f33-83f4-47159b59b77d",
 				"5c9d3b2e-54f3-4853-b30b-96300cde5b0e",
-				"8b9d7e72-213b-4e30-bc7f-71382759a267",
+				"a0d73fe3-4792-4f33-83f4-47159b59b77d",
+				"9fa67ab4-1658-45b6-be22-f32ecde114b0",
+				"d476d13e-5c8f-4079-92f4-c2a86706e4a5",
+				"c9f7852b-d244-4233-933a-adf3e51ef74b",
+				"e71e3e3e-24c9-4adf-916c-4411bf8eac32",
 				"d6f75383-5720-4a5c-89ff-8a84ad3045e4",
 				"90e54cbd-2a69-486f-95ca-348d8521be52",
 				"fa23d5ae-70a9-4778-92f4-3726c46c91d1",
 				"9191fa06-5f5c-46ea-817c-33d59268f940",
 				"7a4946da-3c7b-4140-b9e9-5618e0f9edce",
 				"740e0264-d2eb-4b17-a5f1-af3502b86ce7",
-				"97922032-3aed-4a02-bd05-087baae82d77",
-				"c9f7852b-d244-4233-933a-adf3e51ef74b",
-				"d476d13e-5c8f-4079-92f4-c2a86706e4a5",
-				"e71e3e3e-24c9-4adf-916c-4411bf8eac32"
+				"97922032-3aed-4a02-bd05-087baae82d77"
 			]
 		},
 		{
 			"uuid": "996c4282-ffc3-48bb-b2bb-5fb35a766687",
 			"title": "Doing",
 			"tasks": [
-				"b2179ea1-aba7-40f3-a14f-0a5d78428f32",
-				"f0659bab-b838-48d7-9867-1bc49881cf02"
+				"fadf0f54-65c9-411e-982d-2a1c73287a5f"
 			]
 		},
 		{
@@ -78,7 +78,9 @@
 				"11813b14-0e3a-4e06-9504-2e0d69f98da5",
 				"2951a999-2754-4919-93c8-304f2794a77f",
 				"ee4739bd-05ad-4af3-b3e4-1da50bca5212",
-				"5431dbe4-58a8-45d7-997e-85d72293cee0"
+				"5431dbe4-58a8-45d7-997e-85d72293cee0",
+				"f0659bab-b838-48d7-9867-1bc49881cf02",
+				"8b9d7e72-213b-4e30-bc7f-71382759a267"
 			]
 		}
 	],
@@ -423,8 +425,8 @@
 			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
 			"steps": [
 				{
-					"details": "Use Tiles for movement",
-					"done": false
+					"details": "Use Tiles for enemy movement",
+					"done": true
 				},
 				{
 					"details": "Use Tiles for Destructibles",
@@ -432,9 +434,23 @@
 				},
 				{
 					"details": "Remove Destructibles from Tilemap on explosion",
-					"done": false
+					"done": true
 				}
 			]
+		},
+		{
+			"uuid": "9fa67ab4-1658-45b6-be22-f32ecde114b0",
+			"title": "Create a level",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "fadf0f54-65c9-411e-982d-2a1c73287a5f",
+			"title": "Bug: Snakes can walk through Bombs",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
 		}
 	],
 	"layout": {

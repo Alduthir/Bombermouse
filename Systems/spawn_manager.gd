@@ -20,7 +20,6 @@ func _on_player_spawn_bomb(player_position: Vector2) -> void:
 		return
 	var cell_coordinate := _terrain.local_to_map(player_position)
 	var cell_contents := _terrain.get_cell_source_id(cell_coordinate)
-	print_debug(cell_coordinate)
 	var has_bomb := cell_contents == -1
 	if has_bomb or placed_bombs.has(cell_coordinate):
 		return
@@ -38,7 +37,7 @@ func _on_bomb_spawn_explosion(bomb_position: Vector2)->void:
 	get_tree().current_scene.add_child(explosion)
 	
 func _on_spawn_snake(snake_pit_position : Vector2)->void:
-	#var new_snake : Node2D = _snake_scene.instantiate()
+	var new_snake : Node2D = _snake_scene.instantiate()
 	
 	#Calculate surrounding cells
 	var pit_cell := _terrain.local_to_map(snake_pit_position)
@@ -56,11 +55,10 @@ func _on_spawn_snake(snake_pit_position : Vector2)->void:
 
 	#Pick a random empty cell to spawn the snake in.
 	
-	#get_tree().root.add_child(new_snake)
+	get_tree().root.add_child(new_snake)
 	pass
 	
 func _on_remove_destructible(destructible_position: Vector2)->void:
-	print_debug("Attempting to destroy")
 	var cell_to_destroy := _destructibles.local_to_map(destructible_position)
 	if _destructibles.get_cell_source_id(cell_to_destroy) != -1:
 		_destructibles.set_cell(cell_to_destroy, -1)

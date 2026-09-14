@@ -19,7 +19,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uf2f8"]
-size = Vector2(16, 15)
+size = Vector2(8, 8)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=335788522]
 y_sort_enabled = true
@@ -33,24 +33,23 @@ sprite_frames = SubResource("SpriteFrames_nr1j4")
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1682326896]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_uf2f8")
 
-[node name="Raycasts" type="Node2D" parent="." unique_id=1963627815]
+[node name="RayCasts" type="Node2D" parent="." unique_id=1963627815]
 unique_name_in_owner = true
 
-[node name="Down" type="RayCast2D" parent="Raycasts" unique_id=2098321254]
+[node name="Down" type="RayCast2D" parent="RayCasts" unique_id=2098321254]
 target_position = Vector2(0, 86)
 collision_mask = 39
 
-[node name="Up" type="RayCast2D" parent="Raycasts" unique_id=734479033]
+[node name="Up" type="RayCast2D" parent="RayCasts" unique_id=734479033]
 target_position = Vector2(0, -86)
 collision_mask = 39
 
-[node name="Left" type="RayCast2D" parent="Raycasts" unique_id=1689223187]
+[node name="Left" type="RayCast2D" parent="RayCasts" unique_id=1689223187]
 target_position = Vector2(-86, 0)
 collision_mask = 39
 
-[node name="Right" type="RayCast2D" parent="Raycasts" unique_id=1366555808]
+[node name="Right" type="RayCast2D" parent="RayCasts" unique_id=1366555808]
 target_position = Vector2(86, 0)
 collision_mask = 39

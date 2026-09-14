@@ -1,6 +1,6 @@
 extends Node
 
-var default_bomb_amount := 1
+var default_bomb_amount := 2
 var default_lives := 3
 var default_movement_speed : float = 100.0
 
