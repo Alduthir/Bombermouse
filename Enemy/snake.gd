@@ -30,10 +30,12 @@ func choose_direction()->Vector2i:
 		if TileGrid.can_move_to(grid_position + Vector2i(ray.target_position.sign())):
 			movement_direction_options.append(ray.target_position.sign())
 	
-	if sees_player: 
+	if movement_direction_options.is_empty():
+		movement_direction = Vector2.ZERO
+	elif sees_player: 
 		movement_direction = movement_direction_options[0]
 	#only overwrite if blocked to avoid changing direction every tile
-	elif movement_direction_options.has(movement_direction) == false: 
+	else:
 		movement_direction= movement_direction_options.pick_random()
 		
 	return movement_direction
@@ -44,8 +46,15 @@ func move(target : Vector2)->void:
 		
 	is_moving = true
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", TileGrid.grid_to_world(target), 0.35)
+	tween.tween_property(self, "global_position", TileGrid.grid_to_world(target), 0.45)
 	tween.tween_callback(func(): 
 		is_moving = false
 		grid_position = target
 		)
+
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	if body.is_in_group("explosion"):
+		set_physics_process(false)
+		SignalBus.enemy_death.emit()
+		queue_free()

@@ -1,16 +1,17 @@
 class_name Explosion extends Node2D
 
-@onready var center_animation_plater : AnimatedSprite2D = %Center
+@onready var center_animation_player : AnimatedSprite2D = %Center
 var explosion_spriteframes := preload("res://Bomb/explosion_animation.tres")
 var sections := []
 var obstacles_to_destroy := []
 func _ready() -> void:
 	var directions := [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 	
+	create_explosion_segment(Vector2.ZERO, RayCast2D.new(), false)
 	for direction in directions:
 		propagate_in_direction(direction)
 		
-	center_animation_plater.play("center")
+
 	for section : Node2D in sections:
 		var animation_player : AnimatedSprite2D = section.get_child(0)
 		animation_player.play()
@@ -74,6 +75,8 @@ func create_explosion_segment(direction : Vector2, terrain_cast: RayCast2D, is_e
 	animatedSprite.animation = "outward"
 	if is_end:
 		animatedSprite.animation = "end"
+	elif direction == Vector2.ZERO:
+		animatedSprite.animation = "center"
 	explosion_segment.add_child(animatedSprite)
 	
 	var rectangle = RectangleShape2D.new()

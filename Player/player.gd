@@ -57,11 +57,10 @@ func update_animation(direction: Vector2)->void:
 		_animationPlayer.flip_h = direction.x < 0.0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("explosion"):
+	if body.is_in_group("explosion") or body.is_in_group("enemy"):
 		set_physics_process(false)
 		_animationPlayer.play("die")
 		_animationPlayer.animation_finished.connect(func()->void:
 			queue_free()
 			PlayerStats.decrease_life()
-			
-			)
+		)

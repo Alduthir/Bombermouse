@@ -39,13 +39,11 @@
 			"uuid": "35548b2f-519c-4daa-bc57-936e54cbd108",
 			"title": "Todo",
 			"tasks": [
-				"fa1c8b8a-b11e-4556-94d1-33f730f670f5",
-				"14f58f6a-1f82-4f15-8505-164d1755aead",
 				"b2179ea1-aba7-40f3-a14f-0a5d78428f32",
-				"bb4927ab-3ca6-4dca-ae94-adde1cfc4550",
 				"cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
 				"5c9d3b2e-54f3-4853-b30b-96300cde5b0e",
 				"a0d73fe3-4792-4f33-83f4-47159b59b77d",
+				"bb4927ab-3ca6-4dca-ae94-adde1cfc4550",
 				"9fa67ab4-1658-45b6-be22-f32ecde114b0",
 				"d476d13e-5c8f-4079-92f4-c2a86706e4a5",
 				"c9f7852b-d244-4233-933a-adf3e51ef74b",
@@ -56,14 +54,15 @@
 				"9191fa06-5f5c-46ea-817c-33d59268f940",
 				"7a4946da-3c7b-4140-b9e9-5618e0f9edce",
 				"740e0264-d2eb-4b17-a5f1-af3502b86ce7",
-				"97922032-3aed-4a02-bd05-087baae82d77"
+				"97922032-3aed-4a02-bd05-087baae82d77",
+				"7789aa88-ba8e-4df5-abf8-00cf45d7e469"
 			]
 		},
 		{
 			"uuid": "996c4282-ffc3-48bb-b2bb-5fb35a766687",
 			"title": "Doing",
 			"tasks": [
-				"fadf0f54-65c9-411e-982d-2a1c73287a5f"
+				"f002bb41-acbd-46fc-81a8-dacd71f3909f"
 			]
 		},
 		{
@@ -76,11 +75,14 @@
 				"f662b6ca-df64-41ab-8040-854abc141e1d",
 				"51a15ef3-cc6e-4791-a47e-fe25b3fc3409",
 				"11813b14-0e3a-4e06-9504-2e0d69f98da5",
-				"2951a999-2754-4919-93c8-304f2794a77f",
 				"ee4739bd-05ad-4af3-b3e4-1da50bca5212",
 				"5431dbe4-58a8-45d7-997e-85d72293cee0",
 				"f0659bab-b838-48d7-9867-1bc49881cf02",
-				"8b9d7e72-213b-4e30-bc7f-71382759a267"
+				"2951a999-2754-4919-93c8-304f2794a77f",
+				"8b9d7e72-213b-4e30-bc7f-71382759a267",
+				"fadf0f54-65c9-411e-982d-2a1c73287a5f",
+				"fa1c8b8a-b11e-4556-94d1-33f730f670f5",
+				"14f58f6a-1f82-4f15-8505-164d1755aead"
 			]
 		}
 	],
@@ -447,7 +449,21 @@
 		},
 		{
 			"uuid": "fadf0f54-65c9-411e-982d-2a1c73287a5f",
-			"title": "Bug: Snakes can walk through Bombs",
+			"title": "Bug: Snakes & Player can walk through Bombs",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "f002bb41-acbd-46fc-81a8-dacd71f3909f",
+			"title": "Bug - Staying center of a bomb avoids the explosion hitbox",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "7789aa88-ba8e-4df5-abf8-00cf45d7e469",
+			"title": "Game over screen",
 			"description": "",
 			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
 			"steps": []
