@@ -57,7 +57,6 @@ func _on_spawn_snake(sender : SnakePit)->void:
 
 	#Pick a random empty cell to spawn the snake in.
 	var snake_location = neighbours.pick_random()
-	print_debug(snake_location)
 	new_snake.global_position = TileGrid.grid_to_world(snake_location)
 	get_tree().root.add_child(new_snake)
 	living_enemies+=1

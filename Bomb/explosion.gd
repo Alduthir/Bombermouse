@@ -1,21 +1,17 @@
 class_name Explosion extends Node2D
 
 @onready var center_animation_player : AnimatedSprite2D = %Center
-var explosion_spriteframes := preload("res://Bomb/explosion_animation.tres")
+var segment_scene : PackedScene = preload("res://Bomb/explosion_segment.tscn")
+
 var sections := []
 var obstacles_to_destroy := []
 func _ready() -> void:
 	var directions := [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 	
 	create_explosion_segment(Vector2.ZERO, RayCast2D.new(), false)
+	 
 	for direction in directions:
 		propagate_in_direction(direction)
-		
-
-	for section : Node2D in sections:
-		var animation_player : AnimatedSprite2D = section.get_child(0)
-		animation_player.play()
-		animation_player.animation_finished.connect(finalize_explosion)
 	
 func propagate_in_direction(direction: Vector2)->void:
 		var depth := 0
@@ -60,43 +56,22 @@ func propagate_in_direction(direction: Vector2)->void:
 			obstacle_cast.force_raycast_update()
 
 func create_explosion_segment(direction : Vector2, terrain_cast: RayCast2D, is_end: bool)->void:
-	var explosion_segment := StaticBody2D.new()
-	explosion_segment.add_to_group("explosion")
+	var explosion_segment : ExplosionSegment = segment_scene.instantiate()
 	explosion_segment.position = terrain_cast.position
-	explosion_segment.set_collision_layer_value(1, false)
-	explosion_segment.set_collision_layer_value(4, true)
-	explosion_segment.set_collision_mask_value(1, true)
-	explosion_segment.set_collision_mask_value(3, true)
-	explosion_segment.set_collision_mask_value(5, true)
-	explosion_segment.set_collision_mask_value(6, true)
-
-	var animatedSprite := AnimatedSprite2D.new()
-	animatedSprite.sprite_frames = explosion_spriteframes
-	animatedSprite.animation = "outward"
-	if is_end:
-		animatedSprite.animation = "end"
-	elif direction == Vector2.ZERO:
-		animatedSprite.animation = "center"
-	explosion_segment.add_child(animatedSprite)
 	
-	var rectangle = RectangleShape2D.new()
-	rectangle.size = Vector2(16,16)
-	var collision_shape = CollisionShape2D.new()
-	collision_shape.shape = rectangle
-	explosion_segment.add_child(collision_shape)
-	
-	match direction:
-		Vector2.DOWN:
-			animatedSprite.flip_v = true
-		Vector2.LEFT:
-			animatedSprite.rotation_degrees = -90
-		Vector2.RIGHT:
-			animatedSprite.rotation_degrees = 90
-	
-
 	add_child(explosion_segment)
 	sections.append(explosion_segment)
-
+	
+	if is_end:
+		explosion_segment.set_explosion_animation(ExplosionSegment.animations.END)
+	elif direction == Vector2.ZERO:
+		explosion_segment.set_explosion_animation(ExplosionSegment.animations.CENTER)
+	else:
+		explosion_segment.set_explosion_animation(ExplosionSegment.animations.OUTWARD)
+	
+	explosion_segment.set_explosion_direction(direction)
+	explosion_segment.explosion_animation_finished.connect(finalize_explosion)
+	
 func finalize_explosion()->void:
 	for exploded_position in obstacles_to_destroy:
 		SignalBus.remove_destructible.emit(exploded_position)

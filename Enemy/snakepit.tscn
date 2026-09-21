@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p26h1"]
 size = Vector2(16, 15)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kwwl"]
+size = Vector2(7.5, 7.5)
+
 [node name="Snakepit" type="StaticBody2D" unique_id=156259981]
 modulate = Color(1, 0.31, 0.31, 1)
 collision_layer = 32
@@ -25,4 +28,14 @@ shape = SubResource("RectangleShape2D_p26h1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=327151607]
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1388940876]
+collision_layer = 32
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1589001223]
+shape = SubResource("RectangleShape2D_4kwwl")
+debug_color = Color(0.7, 0, 0, 0.41960785)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

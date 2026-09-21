@@ -56,11 +56,18 @@ func update_animation(direction: Vector2)->void:
 	if signed_direction.length() > 0:
 		_animationPlayer.flip_h = direction.x < 0.0
 
+func die()->void:
+	set_physics_process(false)
+	_animationPlayer.play("die")
+	_animationPlayer.animation_finished.connect(func()->void:
+		queue_free()
+		PlayerStats.decrease_life()
+	)
+	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("explosion") or body.is_in_group("enemy"):
-		set_physics_process(false)
-		_animationPlayer.play("die")
-		_animationPlayer.animation_finished.connect(func()->void:
-			queue_free()
-			PlayerStats.decrease_life()
-		)
+	if body.is_in_group("enemy"):
+		die()
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("explosion"):
+		die()

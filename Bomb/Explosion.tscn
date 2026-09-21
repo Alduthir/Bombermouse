@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my0nf"]
 size = Vector2(16, 16)
 
-[node name="Explosion" type="StaticBody2D" unique_id=1751118969 groups=["explosion"]]
+[node name="Explosion" type="Area2D" unique_id=1576670801 groups=["explosion"]]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 8

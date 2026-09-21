@@ -53,8 +53,14 @@ func move(target : Vector2)->void:
 		)
 
 
-func _on_hurt_box_body_entered(body: Node2D) -> void:
-	if body.is_in_group("explosion"):
+
+
+func die()->void:
 		set_physics_process(false)
 		SignalBus.enemy_death.emit()
 		queue_free()
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	if area.is_in_group("explosion"):
+		die()

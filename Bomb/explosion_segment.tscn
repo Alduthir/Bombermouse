@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d3u368eu6g8bs"]
+
+[ext_resource type="Script" uid="uid://qmsy217sibth" path="res://Bomb/explosion_segment.gd" id="1_37u7j"]
+[ext_resource type="SpriteFrames" uid="uid://dbuohqwge4rir" path="res://Bomb/explosion_animation.tres" id="1_i24km"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p26h1"]
+size = Vector2(16, 16)
+
+[node name="ExplosionSegment" type="Area2D" unique_id=1014974584 groups=["explosion"]]
+collision_layer = 8
+collision_mask = 53
+script = ExtResource("1_37u7j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677017970]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_i24km")
+animation = &"outward"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=767842458]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_p26h1")

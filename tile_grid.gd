@@ -5,6 +5,7 @@ var terrain: TileMapLayer
 var obstacles: TileMapLayer
 var destructibles: TileMapLayer
 var bomb_tiles : Array[Vector2i] = []
+var snake_pits : Array[Vector2i] = []
 func setup(p_terrain: TileMapLayer, p_obstacles: TileMapLayer, p_destructibles: TileMapLayer)->void:
 	terrain = p_terrain
 	obstacles = p_obstacles
@@ -17,7 +18,8 @@ func can_move_to(cell: Vector2i) -> bool:
 		return false
 	if bomb_tiles.has(cell):
 		return false
-	
+	if snake_pits.has(cell):
+		return false
 	#If there is no cell drawn on terrain, its a nonexistant piece of map.
 	if terrain.get_cell_source_id(cell) == -1:
 		return false
@@ -31,6 +33,12 @@ func world_to_grid(pos: Vector2) -> Vector2i:
 		floor(pos.x / TILE_SIZE),
 		floor(pos.y / TILE_SIZE)
 	)
+
+func add_snake_pit(cell: Vector2i):
+	snake_pits.append(cell)
+	
+func remove_snake_pit(cell:Vector2i):
+	snake_pits.erase(cell)
 
 func add_bomb_tile(cell: Vector2i):
 	bomb_tiles.append(cell)

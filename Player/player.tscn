@@ -199,10 +199,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wuci"]
-size = Vector2(15, 16)
+size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iruf7"]
-size = Vector2(5, 7)
+size = Vector2(6, 7)
 
 [node name="Player" type="CharacterBody2D" unique_id=2081047818]
 y_sort_enabled = true
@@ -219,7 +219,6 @@ autoplay = "idle"
 offset = Vector2(0, -8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1284153464]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_2wuci")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=580856313]
@@ -227,8 +226,9 @@ collision_mask = 12
 
 [node name="HurtBox" type="CollisionShape2D" parent="Area2D" unique_id=538919339]
 unique_name_in_owner = true
-position = Vector2(0.5, 3.5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_iruf7")
 debug_color = Color(0.9905116, 0.058471493, 0.19671464, 0.41960785)
 
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
