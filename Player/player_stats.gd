@@ -1,6 +1,6 @@
 extends Node
 
-var default_bomb_amount := 1
+var default_bomb_amount := 3
 var default_lives := 3
 var default_movement_speed : float = 100.0
 
@@ -14,7 +14,7 @@ func decrease_life()-> void:
 	reset_defaults()
 	
 	if lives <= 0:
-		print_debug("Game Over")
+		GameState.trigger_gameover(false)
 	else:
 		get_tree().reload_current_scene()
 

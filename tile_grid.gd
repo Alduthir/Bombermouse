@@ -6,6 +6,8 @@ var obstacles: TileMapLayer
 var destructibles: TileMapLayer
 var bomb_tiles : Array[Vector2i] = []
 var snake_pits : Array[Vector2i] = []
+
+var game_over_scene := preload("res://UI/GameOver.tscn")
 func setup(p_terrain: TileMapLayer, p_obstacles: TileMapLayer, p_destructibles: TileMapLayer)->void:
 	terrain = p_terrain
 	obstacles = p_obstacles
@@ -39,6 +41,7 @@ func add_snake_pit(cell: Vector2i):
 	
 func remove_snake_pit(cell:Vector2i):
 	snake_pits.erase(cell)
+	check_clear_state()
 
 func add_bomb_tile(cell: Vector2i):
 	bomb_tiles.append(cell)
@@ -53,3 +56,7 @@ func has_bomb_tile(cell: Vector2i):
 func clear_destructible_tile(cell: Vector2i):
 	if destructibles.get_cell_source_id(cell) != -1:
 		destructibles.set_cell(cell, -1)
+
+func check_clear_state()->void:
+	if snake_pits.is_empty():
+		GameState.trigger_gameover(true)

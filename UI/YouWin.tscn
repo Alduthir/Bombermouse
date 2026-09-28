@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://uwd1irg4ooju"]
+
+[ext_resource type="Script" uid="uid://x5tjb6ywex6s" path="res://UI/game_over.gd" id="1_5qy0t"]
+[ext_resource type="Shader" uid="uid://cbn0djovtjdqy" path="res://UI/blur.gdshader" id="2_wgqon"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjexa"]
+shader = ExtResource("2_wgqon")
+shader_parameter/blur_amount = 0.0
+shader_parameter/tint = Color(0, 0, 0, 1)
+shader_parameter/tint_strength = 0.0
+shader_parameter/saturation = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_p26h1"]
+font_size = 56
+font_color = Color(0.40554485, 0.72785586, 0.30149758, 1)
+outline_size = 1
+
+[node name="YouWin" type="Control" unique_id=1892094704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5qy0t")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=160517300]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=367398772]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_kjexa")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2901961, 0.2901961, 0.2901961, 0.7607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer" unique_id=484264395]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 21
+
+[node name="Label" type="Label" parent="CanvasLayer/VBoxContainer" unique_id=41097299]
+layout_mode = 2
+text = "You Win!"
+label_settings = SubResource("LabelSettings_p26h1")
+horizontal_alignment = 1
+
+[node name="Label2" type="RichTextLabel" parent="CanvasLayer/VBoxContainer" unique_id=606208041]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/italics_font_size = 13
+bbcode_enabled = true
+text = "Thank you for playing my tiny bomberman clone. I hope you enjoy it and keep an eye out for future projects of mine. [i]~Alduthir[/i]"
+fit_content = true
+
+[node name="ButtonContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer" unique_id=700261500]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 14
+
+[node name="PlayAgain" type="Button" parent="CanvasLayer/VBoxContainer/ButtonContainer" unique_id=507892898]
+layout_mode = 2
+text = "Play Again"
+
+[node name="MenuButton" type="Button" parent="CanvasLayer/VBoxContainer/ButtonContainer" unique_id=1152559686]
+layout_mode = 2
+text = "Back to Menu"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/VBoxContainer/ButtonContainer" unique_id=1268495960]
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+size_flags_vertical = 3
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ButtonContainer/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ButtonContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/ButtonContainer/QuitButton" to="." method="_on_quit_button_pressed"]

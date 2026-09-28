@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://ctg1psat76axr"]
+
+[ext_resource type="Script" uid="uid://cean0ywq7m338" path="res://UI/pause_screen.gd" id="1_8tsyf"]
+[ext_resource type="Shader" uid="uid://bbses314pcdh7" path="res://UI/PauseScreen.gdshader" id="2_eaots"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcayt"]
+shader = ExtResource("2_eaots")
+shader_parameter/blur_amount = 0.0
+shader_parameter/tint = Color(0, 0, 0, 1)
+shader_parameter/tint_strength = 0.3750000178125
+shader_parameter/saturation = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eaots"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="PauseScreen" type="Control" unique_id=1955957912]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8tsyf")
+
+[node name="BlurColorRect" type="ColorRect" parent="." unique_id=443929073]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_xcayt")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="UIPanelContainer" type="PanelContainer" parent="." unique_id=233156545]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 300)
+custom_maximum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -150.0
+offset_right = 150.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eaots")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer" unique_id=969020935]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIPanelContainer/VBoxContainer" unique_id=800401802]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="UIPanelContainer/VBoxContainer" unique_id=1992997612]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer/VBoxContainer/PanelContainer" unique_id=1030761138]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ResumeButton" type="Button" parent="UIPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=801147675]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="SettingsButton" type="Button" parent="UIPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1884824410]
+layout_mode = 2
+disabled = true
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="UIPanelContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=989179628]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="UIPanelContainer/VBoxContainer/PanelContainer/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="UIPanelContainer/VBoxContainer/PanelContainer/VBoxContainer/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="UIPanelContainer/VBoxContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

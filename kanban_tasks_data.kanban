@@ -33,30 +33,25 @@
 				"8cc9e69d-bc0a-49c8-8b1d-853a300f309c",
 				"b8568123-45dc-41df-8a69-875feaf518c5",
 				"5ff9cbd5-a960-4ceb-a803-b813cdd1bd82",
-				"d7aaedbe-d6cf-4d48-9e1e-ac32ac042e7c",
 				"d6f75383-5720-4a5c-89ff-8a84ad3045e4",
 				"90e54cbd-2a69-486f-95ca-348d8521be52",
 				"9191fa06-5f5c-46ea-817c-33d59268f940",
 				"7a4946da-3c7b-4140-b9e9-5618e0f9edce",
 				"fa23d5ae-70a9-4778-92f4-3726c46c91d1",
-				"aa5a9c7b-f907-4cf6-9ced-26ccdac26ede"
+				"aa5a9c7b-f907-4cf6-9ced-26ccdac26ede",
+				"228c312e-1dd3-4aec-8db0-60d5f6de3138"
 			]
 		},
 		{
 			"uuid": "35548b2f-519c-4daa-bc57-936e54cbd108",
 			"title": "Todo",
 			"tasks": [
-				"b2179ea1-aba7-40f3-a14f-0a5d78428f32",
-				"cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
 				"5c9d3b2e-54f3-4853-b30b-96300cde5b0e",
 				"a0d73fe3-4792-4f33-83f4-47159b59b77d",
-				"9fa67ab4-1658-45b6-be22-f32ecde114b0",
-				"d476d13e-5c8f-4079-92f4-c2a86706e4a5",
-				"c9f7852b-d244-4233-933a-adf3e51ef74b",
 				"740e0264-d2eb-4b17-a5f1-af3502b86ce7",
-				"7789aa88-ba8e-4df5-abf8-00cf45d7e469",
 				"db8e777d-de03-4db4-b1d3-2b680fd46e39",
 				"d15d206f-6fc6-46fa-aebd-f2968e229d16",
+				"d7aaedbe-d6cf-4d48-9e1e-ac32ac042e7c",
 				"2b0d8cc7-815c-400d-b715-9f952262bad0",
 				"b0003be5-b8fe-46dd-ac03-313e98665ec2",
 				"453a99c3-6441-4612-b84e-58fd3ba5ff8c",
@@ -66,7 +61,9 @@
 		{
 			"uuid": "996c4282-ffc3-48bb-b2bb-5fb35a766687",
 			"title": "Doing",
-			"tasks": []
+			"tasks": [
+				"b2179ea1-aba7-40f3-a14f-0a5d78428f32"
+			]
 		},
 		{
 			"uuid": "f1bc0f5e-f10e-4d9b-b47e-86d089111b50",
@@ -80,8 +77,13 @@
 				"e56f0791-6d3a-4611-9ec0-d616213a07d1",
 				"11813b14-0e3a-4e06-9504-2e0d69f98da5",
 				"f002bb41-acbd-46fc-81a8-dacd71f3909f",
+				"cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
+				"c9f7852b-d244-4233-933a-adf3e51ef74b",
 				"ee4739bd-05ad-4af3-b3e4-1da50bca5212",
 				"c48771c8-d687-4b4e-8db8-b1d5c29b20ea",
+				"7789aa88-ba8e-4df5-abf8-00cf45d7e469",
+				"9fa67ab4-1658-45b6-be22-f32ecde114b0",
+				"d476d13e-5c8f-4079-92f4-c2a86706e4a5",
 				"bb4927ab-3ca6-4dca-ae94-adde1cfc4550",
 				"5431dbe4-58a8-45d7-997e-85d72293cee0",
 				"f0659bab-b838-48d7-9867-1bc49881cf02",
@@ -134,7 +136,12 @@
 			"title": "Destroying all snake pits clears the level",
 			"description": "",
 			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
-			"steps": []
+			"steps": [
+				{
+					"details": "Win Screen",
+					"done": true
+				}
+			]
 		},
 		{
 			"uuid": "589b7a13-0157-4f30-81b3-417aed58acc9",
@@ -513,10 +520,19 @@
 		},
 		{
 			"uuid": "453a99c3-6441-4612-b84e-58fd3ba5ff8c",
-			"title": "Audio Settings",
+			"title": "Settings screen",
 			"description": "",
 			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
-			"steps": []
+			"steps": [
+				{
+					"details": "Audio Settings",
+					"done": false
+				},
+				{
+					"details": "Display Settings",
+					"done": false
+				}
+			]
 		},
 		{
 			"uuid": "bbaa94c1-d03d-4c6a-b27e-833043be3813",
@@ -538,6 +554,30 @@
 			"description": "",
 			"category": "f8a30e80-0bd2-402c-93ee-1811f0bc1280",
 			"steps": []
+		},
+		{
+			"uuid": "228c312e-1dd3-4aec-8db0-60d5f6de3138",
+			"title": "Game Over Screen drops into view",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": [
+				{
+					"details": "Game Stops",
+					"done": false
+				},
+				{
+					"details": "Game Over words drop down from above",
+					"done": false
+				},
+				{
+					"details": "Buttons slide in from below",
+					"done": false
+				},
+				{
+					"details": "Shake screen a bit once Game Over drops into place",
+					"done": false
+				}
+			]
 		}
 	],
 	"layout": {

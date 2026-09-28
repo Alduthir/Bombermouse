@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="BomberMouse"
-run/main_scene="uid://chiibhsnwqtxv"
+run/main_scene="uid://d3qfvwme5iexe"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://dk14wmdcpykb7"
 
@@ -21,6 +21,7 @@ PlayerStats="*uid://c748mm1b6u3q6"
 BombStats="*uid://b1qcagdsjxwqm"
 SignalBus="*uid://svkdxap52mwq"
 TileGrid="*uid://jitlh75vusgc"
+GameState="*uid://eoqxf57ue7lh"
 
 [display]
 
