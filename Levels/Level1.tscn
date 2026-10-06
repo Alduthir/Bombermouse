@@ -57,3 +57,12 @@ position = Vector2(-184, -8)
 
 [node name="PauseScreen" parent="CanvasLayer" unique_id=1955957912 instance=ExtResource("7_dl8mf")]
 visible = false
+
+[node name="Snakepit" parent="CanvasLayer" unique_id=156259981 instance=ExtResource("6_p5226")]
+position = Vector2(-104, 72)
+
+[node name="Snakepit2" parent="CanvasLayer" unique_id=1252764097 instance=ExtResource("6_p5226")]
+position = Vector2(-24, 152)
+
+[node name="Snakepit3" parent="CanvasLayer" unique_id=464130860 instance=ExtResource("6_p5226")]
+position = Vector2(-200, -120)

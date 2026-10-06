@@ -55,7 +55,8 @@
 				"2b0d8cc7-815c-400d-b715-9f952262bad0",
 				"b0003be5-b8fe-46dd-ac03-313e98665ec2",
 				"453a99c3-6441-4612-b84e-58fd3ba5ff8c",
-				"bbaa94c1-d03d-4c6a-b27e-833043be3813"
+				"bbaa94c1-d03d-4c6a-b27e-833043be3813",
+				"09ca602a-4f26-4881-8875-0a6dde2775c9"
 			]
 		},
 		{
@@ -578,6 +579,13 @@
 					"done": false
 				}
 			]
+		},
+		{
+			"uuid": "09ca602a-4f26-4881-8875-0a6dde2775c9",
+			"title": "Really annoying bug that sometimes tiles arent walkable",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
 		}
 	],
 	"layout": {
