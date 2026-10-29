@@ -12,6 +12,11 @@ func setup(p_terrain: TileMapLayer, p_obstacles: TileMapLayer, p_destructibles: 
 	terrain = p_terrain
 	obstacles = p_obstacles
 	destructibles = p_destructibles
+	bomb_tiles.clear()
+	snake_pits.clear()
+	
+	for pit: SnakePit in get_tree().current_scene.find_children("*", "SnakePit"):
+		add_snake_pit(world_to_grid(pit.global_position))
 	
 func can_move_to(cell: Vector2i) -> bool:
 	if obstacles.get_cell_source_id(cell) != -1:
@@ -37,14 +42,16 @@ func world_to_grid(pos: Vector2) -> Vector2i:
 	)
 
 func add_snake_pit(cell: Vector2i):
-	snake_pits.append(cell)
+	if not snake_pits.has(cell):
+		snake_pits.append(cell)
 	
 func remove_snake_pit(cell:Vector2i):
 	snake_pits.erase(cell)
 	check_clear_state()
 
 func add_bomb_tile(cell: Vector2i):
-	bomb_tiles.append(cell)
+	if not bomb_tiles.has(cell):
+		bomb_tiles.append(cell)
 	
 	
 func remove_bomb_tile(cell: Vector2i):

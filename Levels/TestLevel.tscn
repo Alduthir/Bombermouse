@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://Levels/test_level.gd" id="1_lvl"]
+[ext_resource type="TileSet" uid="uid://c2jmu5x8f3tjp" path="res://Shared/Tileset.tres" id="2_tiles"]
+[ext_resource type="PackedScene" uid="uid://denn4kptseekf" path="res://Player/player.tscn" id="3_player"]
+[ext_resource type="PackedScene" uid="uid://cmdcyx40yl2qj" path="res://Systems/SpawnManager.tscn" id="4_spawn"]
+[ext_resource type="PackedScene" uid="uid://cw7jf3he14wxq" path="res://Enemy/snake.tscn" id="5_snake"]
+
+[node name="TestLevel" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_lvl")
+
+[node name="Terrain" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+z_index = -1
+tile_set = ExtResource("2_tiles")
+
+[node name="Obstacles" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tiles")
+
+[node name="Destructibles" type="TileMapLayer" parent="."]
+unique_name_in_owner = true
+tile_set = ExtResource("2_tiles")
+
+[node name="Player" parent="." instance=ExtResource("3_player")]
+unique_name_in_owner = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+
+[node name="SpawnManager" parent="." instance=ExtResource("4_spawn")]
+_snake_scene = ExtResource("5_snake")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DebugLabel" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 260.0
+offset_bottom = 260.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.85)
+theme_override_font_sizes/font_size = 10

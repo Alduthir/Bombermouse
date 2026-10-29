@@ -7,13 +7,15 @@ extends Node
 var placed_bombs : int = 0
 var living_enemies : int = 0
 
+@onready var _enemy_root : Node = %EnemyRoot
+
 func _ready() -> void:
 	SignalBus.spawn_bomb.connect(_on_player_spawn_bomb)
 	SignalBus.spawn_explosion.connect(_on_bomb_spawn_explosion)
 	SignalBus.spawn_snake.connect(_on_spawn_snake)
 	SignalBus.remove_destructible.connect(_on_remove_destructible)
 	SignalBus.enemy_death.connect(_on_enemy_death)
-	for child in get_tree().root.get_children():
+	for child in _enemy_root.get_children():
 		if child is Snake:
 			living_enemies+=1
 
@@ -58,7 +60,7 @@ func _on_spawn_snake(sender : SnakePit)->void:
 	#Pick a random empty cell to spawn the snake in.
 	var snake_location = neighbours.pick_random()
 	new_snake.global_position = TileGrid.grid_to_world(snake_location)
-	get_tree().root.add_child(new_snake)
+	_enemy_root.add_child(new_snake)
 	living_enemies+=1
 	
 func _on_remove_destructible(destructible_position: Vector2)->void:

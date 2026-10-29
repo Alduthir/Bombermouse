@@ -10,6 +10,7 @@ size = Vector2(16, 15)
 size = Vector2(7.5, 7.5)
 
 [node name="Snakepit" type="StaticBody2D" unique_id=156259981]
+visible = false
 modulate = Color(1, 0.31, 0.31, 1)
 collision_layer = 32
 collision_mask = 9
@@ -38,4 +39,3 @@ debug_color = Color(0.7, 0, 0, 0.41960785)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

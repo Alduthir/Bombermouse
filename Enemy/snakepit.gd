@@ -1,8 +1,4 @@
 class_name SnakePit extends StaticBody2D
-
-
-func _ready() -> void:
-	TileGrid.add_snake_pit(TileGrid.world_to_grid(position))
 	
 func _on_timer_timeout() -> void:
 	SignalBus.spawn_snake.emit(self)

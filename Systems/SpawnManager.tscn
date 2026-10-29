@@ -8,3 +8,6 @@
 script = ExtResource("1_sqd36")
 _bomb_scene = ExtResource("2_dax1h")
 _explosion_scene = ExtResource("3_ca4f2")
+
+[node name="EnemyRoot" type="Node" parent="." unique_id=1622584946]
+unique_name_in_owner = true

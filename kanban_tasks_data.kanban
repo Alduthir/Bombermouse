@@ -19,6 +19,11 @@
 			"uuid": "c75be979-c53b-43d4-ba39-83aedb76d3e1",
 			"title": "Art",
 			"color": "149bd3"
+		},
+		{
+			"uuid": "5532e431-4754-46cb-9778-aa23c52f2802",
+			"title": "Feedback",
+			"color": "d015cb"
 		}
 	],
 	"stages": [
@@ -56,7 +61,12 @@
 				"b0003be5-b8fe-46dd-ac03-313e98665ec2",
 				"453a99c3-6441-4612-b84e-58fd3ba5ff8c",
 				"bbaa94c1-d03d-4c6a-b27e-833043be3813",
-				"09ca602a-4f26-4881-8875-0a6dde2775c9"
+				"09ca602a-4f26-4881-8875-0a6dde2775c9",
+				"441fea99-7da4-4c78-91f0-aa88053a34a6",
+				"f002bb41-acbd-46fc-81a8-dacd71f3909f",
+				"68deb238-7cfa-464d-81da-921cfd6b8e17",
+				"1114ea57-f860-437d-a423-636fc4de7de6",
+				"1680cf5d-280b-4eb7-87b4-b08dc648d451"
 			]
 		},
 		{
@@ -77,7 +87,6 @@
 				"51a15ef3-cc6e-4791-a47e-fe25b3fc3409",
 				"e56f0791-6d3a-4611-9ec0-d616213a07d1",
 				"11813b14-0e3a-4e06-9504-2e0d69f98da5",
-				"f002bb41-acbd-46fc-81a8-dacd71f3909f",
 				"cdf2acd6-8ddf-4805-ae85-5dd50637b47a",
 				"c9f7852b-d244-4233-933a-adf3e51ef74b",
 				"ee4739bd-05ad-4af3-b3e4-1da50bca5212",
@@ -465,7 +474,7 @@
 		},
 		{
 			"uuid": "f002bb41-acbd-46fc-81a8-dacd71f3909f",
-			"title": "Bug - Staying center of a bomb avoids the explosion hitbox",
+			"title": "Bug - Self damage only works when walking into an explosion",
 			"description": "",
 			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
 			"steps": []
@@ -583,6 +592,34 @@
 		{
 			"uuid": "09ca602a-4f26-4881-8875-0a6dde2775c9",
 			"title": "Really annoying bug that sometimes tiles arent walkable",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "441fea99-7da4-4c78-91f0-aa88053a34a6",
+			"title": "Audiovisual feedback when dying",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "68deb238-7cfa-464d-81da-921cfd6b8e17",
+			"title": "Marker for offscreen objectives and enemies",
+			"description": "",
+			"category": "0dde8dcc-efd8-4268-aa67-3b2603416415",
+			"steps": []
+		},
+		{
+			"uuid": "1114ea57-f860-437d-a423-636fc4de7de6",
+			"title": "Bug - Game doesnt reload on a retry locking you in a death loop",
+			"description": "",
+			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
+			"steps": []
+		},
+		{
+			"uuid": "1680cf5d-280b-4eb7-87b4-b08dc648d451",
+			"title": "Bug - Enemies die from walls?",
 			"description": "",
 			"category": "37ce234f-3d62-40a8-ad78-b5ac4b4c08ed",
 			"steps": []
